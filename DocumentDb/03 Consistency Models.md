@@ -1,1 +1,6 @@
 It's very important to understand the consistency models in DocumentDB as it is one of the very few databases that provides us with a wide variety of those. A default consistency level can be configured on your database accounts. This applies to all collections across all of the databases. All reads and queries of the user-defined resources will by default, use the consistency level specified on the database account.
+
+
+However, you can change the consistency level of a specific query by changing the header that's listed right here. It's x-ms-consistency-level. So, there are four different kinds of consistency levels supported by DocumentDB. The first one is strong consistency, something you see in an RDBMS. A read operation with strong consistency is higher than any of the others, but it's almost equal to the one in bounded staleness.
+
+DocumentDB accounts using strong consistency cannot associate more than one Azure region with the DocumentDB account. In strong consistency, the structure guarantees the reads to return the most recent version of the document which is not the case with eventual consistency. For example, a write will only be visible once it is committed durably by the majority quorum of the replicas. It can either be synchronously committed by both the primary and the quorum of the secondaries.
